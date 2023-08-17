@@ -42,7 +42,6 @@
 import { ref } from 'vue'
 import DestinationView from '../components/DestinationView.vue'
 
-
 export default {
   name: 'HomeView',
   components: { DestinationView },

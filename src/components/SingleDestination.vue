@@ -1,7 +1,7 @@
 <template>
     <v-card
         variant="outlined"
-        class="ma-0 pa-5"
+        class="ma-3 pa-5"
     >
         <slot></slot>
     </v-card>

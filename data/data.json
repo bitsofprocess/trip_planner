@@ -77,6 +77,84 @@
             "arrival_time": null,
             "departure_date": "08/15/2023",
             "departure_time": null
+        },
+        {
+            "id": 7,
+            "city": "Sebastopol",
+            "state": "CA",
+            "accomodation": {
+                "name": null,
+                "address": null
+            },
+            "arrival_date": "07/19/2023",
+            "arrival_time": "3:00PM",
+            "departure_date": "07/20/2023",
+            "departure_time": "6:00AM"
+        },
+        {
+            "id": 8,
+            "city": "Jedediah Smith Redwoods",
+            "state": "CA",
+            "accomodation": {
+                "name": "Ruby van Deventer County Park",
+                "address": null
+            },
+            "arrival_date": "07/20/2023",
+            "arrival_time": null,
+            "departure_date": "07/21/2023",
+            "departure_time": null
+        },
+        {
+            "id": 9,
+            "city": "Vancouver",
+            "state": "WA",
+            "accomodation": {
+                "name": "Oshiana's",
+                "address": null
+            },
+            "arrival_date": "07/21/2023",
+            "arrival_time": null,
+            "departure_date": "07/22/2023",
+            "departure_time": null
+        },
+        {
+            "id": 10,
+            "city": "Portland",
+            "state": "OR",
+            "accomodation": {
+                "name": "Rael's",
+                "address": null
+            },
+            "arrival_date": "07/22/2023",
+            "arrival_time": null,
+            "departure_date": "08/06/2023",
+            "departure_time": null
+        },
+        {
+            "id": 11,
+            "city": "Squamish",
+            "state": "BC",
+            "accomodation": {
+                "name": null,
+                "address": null
+            },
+            "arrival_date": "08/06/2023",
+            "arrival_time": null,
+            "departure_date": "08/14/2023",
+            "departure_time": null
+        },
+        {
+            "id": 12,
+            "city": "Bellingham",
+            "state": "WA",
+            "accomodation": {
+                "name": null,
+                "address": null
+            },
+            "arrival_date": "08/14/2023",
+            "arrival_time": null,
+            "departure_date": "08/15/2023",
+            "departure_time": null
         }
     ]
 }
