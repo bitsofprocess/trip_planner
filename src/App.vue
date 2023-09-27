@@ -1,8 +1,7 @@
 <template>
   <v-app>
     <div>
-      <!-- <AppBar /> -->
-      <v-app-bar>
+      <v-app-bar color="deep-orange-accent-2">
           <div class="small-logo" v-if="isLoggedIn">
             roamer
           </div>
@@ -10,12 +9,13 @@
             <v-btn @click="handleSignOut" v-if="isLoggedIn">
                 <v-icon>mdi-logout</v-icon>
             </v-btn>
-  
+
         </template>
       </v-app-bar>
     </div>
-  
-    <router-view />
+    <v-main>
+        <router-view />
+    </v-main>
   </v-app>
 
 </template>
@@ -60,6 +60,7 @@ setup() {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fruktur:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .app-name {
     font-size: 5rem;
