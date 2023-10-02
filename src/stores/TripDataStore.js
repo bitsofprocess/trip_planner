@@ -2,7 +2,8 @@ import { defineStore } from 'pinia'
 
 export const useTripDataStore = defineStore('TripDataStore', {
     state: () => ({
-        dateRange: [{start: null, end: null}],
+        dateRange: [{start: null, end: null}], 
+        dateArray: []
     }),
     getters: {
         // favs() {
@@ -18,8 +19,19 @@ export const useTripDataStore = defineStore('TripDataStore', {
         // }
     },
     actions: {
-        getDateRange() {
-            console.log('action working');
+        async getDateRange(startDate, endDate) {
+            const dates = []
+            let currentDate = startDate
+            const addDays = function (days) {
+              const date = new Date(this.valueOf())
+              date.setDate(date.getDate() + days)
+              return date
+            }
+            while (currentDate <= endDate) {
+              dates.push(currentDate)
+              currentDate = addDays.call(currentDate, 1)
+            }
+            return this.dateArray = dates
         }
         // async getTasks() {
         //     this.loading = true

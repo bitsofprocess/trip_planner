@@ -6,7 +6,7 @@
           <v-card 
             width="510px"   
             class="text-center mx-auto pa-6" 
-            :title="`Trip Dates: ${start} - ${end}`"
+            :title="`Trip Dates: `"
           >
             <div class="text-center">
             <v-btn
@@ -22,7 +22,7 @@
             >
               <v-card
                 class="text-center"
-                :title="`${start} - ${end}`"
+                :title="`${newStart} - ${newEnd}`"
               >
                 <DatePicker @set-date-range="saveChange" class="pa-6" />
              
@@ -62,6 +62,7 @@
 import { useTripDataStore } from '../stores/TripDataStore'
 import { ref } from 'vue'
 import { format } from 'date-fns'
+// import { getDates } from '../services/DateHandlers'
 // import { storeToRefs } from 'pinia'
 import DatePicker from '../components/DatePicker.vue'
 import DetailAdder from '../components/DetailAdder.vue'
@@ -74,21 +75,26 @@ export default {
     const store = useTripDataStore()
     const dialog = ref(false)
     // const { dateRange } = storeToRefs(store)
-    let start = ref('')
-    let end = ref('')
+    // let currStart = ref(format(store.dateRange.start, 'MM/dd/yyyy'))
+    // let currEnd = ref(format(store.dateRange.end, 'MM/dd/yyyy'))
+    let newStart = ref('')
+    let newEnd = ref('')
+    const dates = []
 
     const saveChange = () => {
       
-      // console.log(dateRange.value.start);
-      start.value = format(store.dateRange.start, 'MM/dd/yyyy')
-      end.value = format(store.dateRange.end, 'MM/dd/yyyy')
-      // end = dateRange.value.end
-      console.log(start)
+   
+      newStart.value = format(store.dateRange.start, 'MM/dd/yyyy')
+      newEnd.value = format(store.dateRange.end, 'MM/dd/yyyy')
+      // dates.value = getDates(store.dateRange.start, store.dateRange.end)
+      // console.log(dates);
+      store.getDateRange(store.dateRange.start, store.dateRange.end)
+      console.log(store.dateArray);
       dialog.value = false
     
     }
 
-    return { dialog, saveChange, start, end }
+    return { dialog, saveChange, newStart, newEnd, store, dates }
   }
 }
 </script>
