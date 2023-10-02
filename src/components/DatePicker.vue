@@ -1,23 +1,29 @@
 <template>
-  <VDatePicker v-model="range" is-range/>
-  <slot></slot>
+  <!-- <v-card width="510px" class="text-center mx-auto"> -->
+  <div width="510px" class="text-center mx-auto">
+    <VDatePicker v-model="range" @click="updateStore" is-range />
+
+  </div>
+
+  <!-- </v-card> -->
 </template>
 
-<script setup>
+<script>
 import { ref } from 'vue'
-// const startDate = ref(new Date())
-// const endDate = ref(new Date())
-// const year = date.getFullYear();
-// const month = date.getMonth();
-// const day = date.getDate()
+import { useTripDataStore } from '../stores/TripDataStore'
+export default {
+props: [],
+setup() {
+  const store = useTripDataStore()
 
-const range = ref({start: new Date(), end: Date() });
+  const range = ref({ start: new Date(), end: new Date() })
 
-// const attributes = ref([
-//   {
-//     hightlight: 'red',
-//     dates: [[new Date(2023, 8, 20), new Date(2023, 8, 24)]],
-//   }
-// ])
+  const updateStore = () => {
+    store.dateRange = range
+  }
+
+  return { range, updateStore, store }
+}
+}
 
 </script>
