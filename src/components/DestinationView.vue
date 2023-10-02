@@ -1,11 +1,11 @@
 
 <template>
 
-  <v-row>
+  <v-row justify="center">
     <v-col cols="6">
-      <v-card class="justify-center">
+      <div class="d-flex pb-4">
         <DatePicker />
-      </v-card>
+      </div>
       <DetailAdder />
     </v-col>
     <v-col cols="6"><DestinationListView :dests="dests"/></v-col>
