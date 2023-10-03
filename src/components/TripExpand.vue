@@ -1,56 +1,50 @@
 <template>
-    <div>
-      <div class="text-center d-flex pb-4">
-        <v-btn class="ma-2" @click="all">
-          All
-        </v-btn>
-        <v-btn class="ma-2" @click="none">
-          None
-        </v-btn>
-      </div>
-  
-      <div class="pb-4">v-model {{ panel }}</div>
-  
-      <v-expansion-panels
-        variant="popout"
-        v-model="panel"
-        multiple
-      >
-        <v-expansion-panel
-          title="Foo"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          value="foo"
-        ></v-expansion-panel>
-  
-        <v-expansion-panel
-          title="Bar"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          value="bar"
-        ></v-expansion-panel>
-  
-        <v-expansion-panel
-          title="Baz"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          value="baz"
-        ></v-expansion-panel>
-      </v-expansion-panels>
+    <div class="text-center d-flex pb-4">
+      <v-btn class="ma-2" @click="all">
+        All
+      </v-btn>
+      <v-btn class="ma-2" @click="none">
+        None
+      </v-btn>
     </div>
-  </template>
+  <div>
+    <v-expansion-panels variant="popout">
+      <v-expansion-panel
+        v-for="date in dates"
+        :key="date"
+        bg-color="teal-lighten-5"
+      >
+      <v-expansion-panel-title>{{ date }}</v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <v-card class="mb-4">
+            card 1
+          </v-card>
+          <v-spacer></v-spacer>
+          <v-card>
+            card 2
+          </v-card>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
+  </div>
+</template>
 
 <script>
+import { useTripDataStore } from '../stores/TripDataStore'
+// import { ref } from 'vue'
+
 export default {
-  data () {
-    return {
-      panel: [],
-    }
-  },
-  methods: {
-    all () {
-      this.panel = ['foo', 'bar', 'baz']
-    },
-    none () {
-      this.panel = []
-    },
-  },
+  props: [ 'dates' ],
+  setup() {
+
+    const store = useTripDataStore()
+  
+    // const dates = ref(store.dateArray)
+ 
+ 
+
+    return { store }
+  }
+
 }
 </script>
