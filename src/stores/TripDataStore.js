@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { format } from 'date-fns'
 
 export const useTripDataStore = defineStore('TripDataStore', {
     state: () => ({
@@ -6,6 +7,10 @@ export const useTripDataStore = defineStore('TripDataStore', {
         dateArray: []
     }),
     getters: {
+        format() {
+            let formattedDateArray = this.dateArray.map(date => format(date, 'MM/dd/yyyy'))
+            return formattedDateArray
+        }
         // favs() {
         //     return this.tasks.filter(t => t.isFav)
         // },
@@ -19,7 +24,7 @@ export const useTripDataStore = defineStore('TripDataStore', {
         // }
     },
     actions: {
-        async getDateRange(startDate, endDate) {
+        createDateArray(startDate, endDate) {
             const dates = []
             let currentDate = startDate
             const addDays = function (days) {
@@ -32,21 +37,19 @@ export const useTripDataStore = defineStore('TripDataStore', {
               currentDate = addDays.call(currentDate, 1)
             }
             return this.dateArray = dates
-        }
-        // async getTasks() {
-        //     this.loading = true
-        //     const res = await fetch('http://localhost:3000/tasks')
+        },
+        // async getDates() {
+        //     const res = await fetch('http://localhost:3000/dests')
         //     const data = await res.json()
 
-        //     this.tasks = data
-        //     this.loading = false
+        //     this.dateArray = data
         // },
-        // async addTask(task) {
-        //     this.tasks.push(task)
+        // async addDateArray(dates) {
+        //     this.dateArray = dates
 
-        //     const res = await fetch('http://localhost:3000/tasks', {
+        //     const res = await fetch('http://localhost:3000/dests', {
         //         method: 'POST',
-        //         body: JSON.stringify(task),
+        //         body: JSON.stringify(dates),
         //         headers: {'Content-Type': 'application/json'}
         //     })
 
