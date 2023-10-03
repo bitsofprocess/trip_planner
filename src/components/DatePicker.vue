@@ -1,11 +1,11 @@
+<!-- https://vcalendar.io/ -->
+
 <template>
-  <!-- <v-card width="510px" class="text-center mx-auto"> -->
+
   <div width="510px" class="text-center mx-auto">
-    <VDatePicker v-model="range" @click="updateStore" is-range />
+    <VDatePicker v-model.range="range" @click="updateStore" />
 
   </div>
-
-  <!-- </v-card> -->
 </template>
 
 <script>
