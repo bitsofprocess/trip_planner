@@ -15,7 +15,7 @@
             >
               Change Dates
             </v-btn>
-
+            <p>{{ store.format }}</p>
             <v-dialog
               v-model="dialog"
               width="auto"
@@ -51,7 +51,7 @@
       </v-col>
       <v-col>
         <v-sheet class="pa-2 ma-2">
-          <TripExpand></TripExpand>
+          <TripExpand :dates="dates"></TripExpand>
         </v-sheet>
       </v-col>
     </v-row>
@@ -79,17 +79,18 @@ export default {
     // let currEnd = ref(format(store.dateRange.end, 'MM/dd/yyyy'))
     let newStart = ref('')
     let newEnd = ref('')
-    const dates = []
+    let dates = ref('')
 
     const saveChange = () => {
       
    
       newStart.value = format(store.dateRange.start, 'MM/dd/yyyy')
       newEnd.value = format(store.dateRange.end, 'MM/dd/yyyy')
-      // dates.value = getDates(store.dateRange.start, store.dateRange.end)
-      // console.log(dates);
-      store.getDateRange(store.dateRange.start, store.dateRange.end)
-      console.log(store.dateArray);
+    
+      store.createDateArray(store.dateRange.start, store.dateRange.end)
+      dates.value = store.format
+
+
       dialog.value = false
     
     }
