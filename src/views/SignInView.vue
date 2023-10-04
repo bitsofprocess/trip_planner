@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SignIn from "@/components/SignIn";
+import SignIn from "@/components/Login/SignIn.vue";
 
 export default {
   name: 'SignInView',

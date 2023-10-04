@@ -10,7 +10,7 @@
 
 <script>
 import { ref } from 'vue'
-import { useTripDataStore } from '../stores/TripDataStore'
+import { useTripDataStore } from '@/stores/TripDataStore'
 export default {
 props: [],
 setup() {

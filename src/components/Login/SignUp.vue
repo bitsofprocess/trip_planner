@@ -35,7 +35,7 @@
 
 <script>
 import { ref, computed } from 'vue'
-import { auth } from '../stores/index'
+import { auth } from '@/stores/index'
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth'
 import { useRouter } from 'vue-router'
 export default {
