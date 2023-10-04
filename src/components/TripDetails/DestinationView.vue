@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import DatePicker from '../components/DatePicker.vue'
-import DestinationListView from '../components/DestinationListView.vue'
-import DetailAdder from '../components/DetailAdder.vue'
+import DatePicker from '../DatePicker/DatePicker.vue'
+import DestinationListView from './DestinationListView.vue'
+import DetailAdder from '../TripEditor/DetailAdder.vue'
 
 export default {
   components: {  DestinationListView, DetailAdder, DatePicker },

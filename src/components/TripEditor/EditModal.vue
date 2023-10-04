@@ -75,7 +75,7 @@
 <script>
 import { ref, toRef } from 'vue'
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from '../stores'
+import { db } from '@/stores/index'
 
 export default {
     props: [ 'toggleEditModal', 'dest'],

@@ -1,5 +1,6 @@
 <template>
- <v-container class="justify-center">
+  test view
+ <!-- <v-container class="justify-center">
     <v-row no-gutters>
       <v-col>
         <v-sheet>
@@ -55,7 +56,7 @@
         </v-sheet>
       </v-col>
     </v-row>
-  </v-container>
+  </v-container> -->
 </template>
 
 <script>
@@ -64,13 +65,13 @@ import { ref } from 'vue'
 import { format } from 'date-fns'
 // import { getDates } from '../services/DateHandlers'
 // import { storeToRefs } from 'pinia'
-import DatePicker from '../components/DatePicker.vue'
-import DetailAdder from '../components/DetailAdder.vue'
-import TripExpand from '../components/TripExpand.vue'
+// import DatePicker from '../components/DatePicker/DatePicker.vue'
+// import DetailAdder from '../components/TripEditor/DetailAdder.vue'
+// import TripExpand from '../components/TripDetails/TripExpand.vue'
 
 
 export default {
-  components: { DatePicker, DetailAdder, TripExpand },
+  // components: { DatePicker, DetailAdder, TripExpand },
   setup() {
     const store = useTripDataStore()
     const dialog = ref(false)

@@ -58,7 +58,7 @@
 <script>
 import { ref } from 'vue';
 import { collection, addDoc } from "firebase/firestore";
-import { db } from '../stores/index'
+import { db } from '@/stores/index'
 
 export default {
   components: { },

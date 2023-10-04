@@ -28,10 +28,10 @@
 
 
 <script>
-import SingleDestination from './SingleDestination'
+import SingleDestination from '../TripDetails/SingleDestination.vue'
 import { doc, deleteDoc } from "firebase/firestore"
-import { db } from '../stores/index'
-import EditModal from './EditModal'
+import { db } from '@/stores/index'
+import EditModal from '../TripEditor/EditModal.vue'
 import { ref } from 'vue'
 
 export default {

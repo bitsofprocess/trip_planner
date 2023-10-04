@@ -14,7 +14,7 @@ import { ref, onMounted } from 'vue'
 // import { collection, getDocs } from "firebase/firestore";
 import { collection, onSnapshot } from "firebase/firestore"
 import { db } from '../stores/index'
-import DestinationView from '../components/DestinationView.vue'
+import DestinationView from '../components/TripDetails/DestinationView.vue'
 
 export default {
   name: 'HomeView',

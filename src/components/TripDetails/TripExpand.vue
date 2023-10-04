@@ -6,6 +6,7 @@
       <v-btn class="ma-2" @click="none">
         None
       </v-btn>
+      <p>{{ format }}</p>
     </div>
   <div>
     <v-expansion-panels variant="popout">
@@ -30,20 +31,21 @@
 </template>
 
 <script>
-import { useTripDataStore } from '../stores/TripDataStore'
+import { useTripDataStore } from '@/stores/TripDataStore'
+import { storeToRefs } from 'pinia'
 // import { ref } from 'vue'
 
 export default {
-  props: [ 'dates' ],
+  props: [ ],
   setup() {
 
     const store = useTripDataStore()
-  
+    const { format } = storeToRefs(store)
     // const dates = ref(store.dateArray)
  
  
 
-    return { store }
+    return { store, format }
   }
 
 }

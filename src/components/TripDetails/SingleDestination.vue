@@ -12,7 +12,7 @@
 
 <script>
 import { doc, deleteDoc } from "firebase/firestore"
-import { db } from '../stores/index'
+import { db } from '@/stores/index'
 
 export default {
     name: 'SingleDestination',

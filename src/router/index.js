@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import SignInView from '../views/SignUpView.vue'
 import TestView from '../views/TestView.vue'
+import TripView from '../views/TripView.vue'
 
 const routes = [
   {
@@ -44,6 +45,17 @@ const routes = [
         meta: {
           requiresAuth: true
         }
+      },
+    ],
+  },
+  {
+    path: '/trip',
+    component: () => import('@/views/TripView.vue'),
+    children: [
+      {
+        path: '',
+        name: 'TripView',
+        component: TripView
       },
     ],
   },

@@ -31,18 +31,19 @@
 
 <script>
 import { ref } from 'vue'
-import { auth } from '../stores/index'
+import { auth } from '@/stores/index'
 import {getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
 import { useRouter } from 'vue-router'
+// import { useFirebaseStore } from '@/stores/FirebaseStore'
 
 export default {
     setup() {
-      const router = useRouter()
+      // const fbStore = useFirebaseStore()
 
+      const router = useRouter()
       const email = ref('')
       const password = ref('')
       let errMsg = ref('')
-
 
       const onSignIn = () => {
         // console.log({email: email.value, password: password.value, confirmPassword: confirmPassword.value})
@@ -70,6 +71,13 @@ export default {
             console.log(error)
           })
       }
+
+      // USING PINIA ACTIONS
+
+      // const onSignIn = fbStore.onSignIn(email.value, password.value)
+
+      // const signInWithGoogle = fbStore.signInWithGoogle() 
+
       return { email, password, errMsg, onSignIn, signInWithGoogle }
     }
 }
