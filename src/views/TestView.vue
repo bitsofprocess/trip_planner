@@ -65,9 +65,9 @@ import { ref } from 'vue'
 import { format } from 'date-fns'
 // import { getDates } from '../services/DateHandlers'
 // import { storeToRefs } from 'pinia'
-// import DatePicker from '../components/DatePicker/DatePicker.vue'
-// import DetailAdder from '../components/TripEditor/DetailAdder.vue'
-// import TripExpand from '../components/TripDetails/TripExpand.vue'
+// import DatePicker from '../components/DatePicker.vue'
+// import DetailAdder from '../components/DetailAdder.vue'
+// import TripExpand from '../components/TripExpand.vue'
 
 
 export default {
