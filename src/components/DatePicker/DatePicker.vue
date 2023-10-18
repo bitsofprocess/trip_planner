@@ -20,6 +20,8 @@ setup() {
 
   const updateStore = () => {
     store.dateRange = range
+    store.createDateArray(range.value.start, range.value.end)
+    console.log(store.dateRange);
   }
 
   return { range, updateStore, store }

@@ -1,12 +1,12 @@
 <template>
-    <div class="text-center d-flex pb-4">
+<div class="text-center d-flex pb-4">
       <v-btn class="ma-2" @click="all">
         All
       </v-btn>
       <v-btn class="ma-2" @click="none">
         None
       </v-btn>
-      <p>{{ format }}</p>
+
     </div>
   <div>
     <v-expansion-panels variant="popout">
@@ -36,7 +36,7 @@ import { storeToRefs } from 'pinia'
 // import { ref } from 'vue'
 
 export default {
-  props: [ ],
+  props: [ "dates" ],
   setup() {
 
     const store = useTripDataStore()
